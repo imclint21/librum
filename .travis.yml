@@ -4,3 +4,6 @@ sudo: required
 dist: xenial
 dotnet: 2.2
 solution: Librum.sln
+script:
+ - dotnet restore
+ - dotnet build
