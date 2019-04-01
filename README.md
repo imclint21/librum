@@ -32,22 +32,28 @@ docker service create \
     "Keywords": "librum,blog,csharp,blogging,netcore,demo",
     "Icon": "fas fa-square",
     "CanonicalUri": "https://blog.clint.network",
+    "Contact": "support@librum.org",
+    "Twitter": "clint_network",
+    "Github": "clintnetwork",
+    "Menu": [
+        {
+            "Title": "About Librum",
+            "Link": "/article/about"
+        }
+    ],
     "Configuration": {
-        "FixedNavbar": true,
+        "FixedNavbar": false,
         "DisplayHeader": true
-    },
-    "Author": {
-        "Name": "Clint.Network",
-        "Mail": "me@clint.network",
-        "Twitter": "clint_network",
-        "GitHub": "clintnetwork",
-        "Website": "https://stratis.guru"
     },
     "UsersStore": [{
         "Role": "Administrator",
         "Email": "me@clint.network",
-        "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08"
+        "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08",
+        "FullName": "Clint.Network",
+        "Twitter": "clint_network",
+        "GitHub": "clintnetwork",
+        "Website": "https://stratis.guru"
     }],
-    "DisqusHostname": "clicksguard-io.disqus.com"
+    "DisqusHostname": "librum.disqus.com"
 }
 ```
