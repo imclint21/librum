@@ -50,16 +50,23 @@
                     </ul>
                     <form class="form-inline ml-3">
                         <a class="btn btn-outline-success btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
-                        <div class="dropdown">
-                            <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" asp-controller="Article" asp-action="New">Post a new Article</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="Settings">Librum Settings</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                        @if(User.Identity.IsAuthenticated)
+                        {
+                            <div class="dropdown">
+                                <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" asp-controller="Article" asp-action="New">Post a new Article</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Settings">Librum Settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                                </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-dark btn-sm my-sm-0 ml-2" asp-controller="Account" asp-action="Login">Sign In</a>
+                        }
                     </form>
                 </div>
             </div>
