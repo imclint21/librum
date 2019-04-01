@@ -2,7 +2,7 @@
 
 Librum is an opensource and ready to use blog system writted in C#
 
-![image](https://user-images.githubusercontent.com/5221349/55349001-d83b6e80-54b8-11e9-990a-30eb295c1aa4.png)
+![image](https://user-images.githubusercontent.com/5221349/55356726-b4355880-54cb-11e9-9bcc-7b1d60c2ff5e.png)
 
 ## Deploy with Docker
 
