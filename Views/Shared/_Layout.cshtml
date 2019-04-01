@@ -4,45 +4,63 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Librum | @ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
+        <link rel="stylesheet" type="text/css" href="~/lib/themify-icons" />
         <link rel="stylesheet" href="~/css/default.css" />
+        <link rel="stylesheet" href="~/css/markdown.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link href="~/lib/nprogress/nprogress.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
         <link rel="stylesheet" href="~/css/default.min.css" />
+        <link rel="stylesheet" href="~/css/markdown.min.css" />
     </environment>
 </head>
-<body class="bg-white">
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white shadow-sm" id="main-bar">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">librum</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-adjust"></i> Clint's Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mr-2">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="far fa-bookmark"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="far fa-bell"></i></a>
                         </li>
                     </ul>
+                    <form class="form-inline ml-3">
+                        <button class="btn btn-outline-dark btn-sm my-sm-0" type="submit">New Article</button>
+                        <div class="dropdown">
+                            <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
-    <main role="main" class="pb-3 py-5">
+    <main role="main">
         @RenderBody()
     </main>
-    <!-- <footer class="footer text-muted">
+    <footer class="footer bg-light py-4">
         <div class="container">
             Copyright &copy; 2019 Librum - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer> -->
+    </footer>
     <partial name="_CookieConsentPartial" />
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
