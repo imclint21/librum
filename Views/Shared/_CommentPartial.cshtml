@@ -22,7 +22,7 @@
             (function()
             {
                 var d = document, s = d.createElement('script');
-                s.src = 'https://clicksguard-io.disqus.com/embed.js';
+                s.src = 'https://@(Configuration.GetValue<string>("DisqusHostname"))/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
             })();
