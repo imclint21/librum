@@ -53,9 +53,11 @@
                         <div class="dropdown">
                             <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" asp-controller="Article" asp-action="New">Post a new Article</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Settings">Librum Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
                             </div>
                         </div>
                     </form>
