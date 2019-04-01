@@ -1,5 +1,8 @@
 @model Article
 @{
+    ViewData["Title"] = Model.Title;
+    ViewData["Description"] = Model.Description;
+    ViewData["Keywords"] = Model.Keywords;
     var commentSettings = new CommentSettings()
     {
         IsInArticle = true
