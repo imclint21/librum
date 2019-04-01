@@ -3,6 +3,7 @@
     "Description": "About me and my life",
     "Keywords": "clint,network,life",
     "Icon": "fa fa-rss",
+    "CanonicalUri": "https://blog.clint.network",
     "Author": {
         "Name": "Clint.Network",
         "Mail": "me@clint.network",
@@ -10,6 +11,13 @@
         "GitHub": "clintnetwork",
         "Website": "https://stratis.guru"
     },
-    "Website": "https://stratis.guru",
+    "UsersStore":
+    [
+        {
+            "Role": "Administrator",
+            "Email": "me@clint.network",
+            "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08"
+        }
+    ],
     "DisqusHostname": "clicksguard-io.disqus.com"
 }
