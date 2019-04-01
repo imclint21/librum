@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="~/css/markdown.min.css" />
     </environment>
 </head>
-<body>
+<body style="@(Configuration.GetSection("Configuration").GetValue<bool>("FixedNavbar") ? "padding-top: 70px":"")">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light @(Configuration.GetSection("Configuration").GetValue<bool>("FixedNavbar") ? "fixed-top":"") bg-white shadow-sm" id="main-bar">
             <div class="container">
@@ -83,7 +83,7 @@
             </div>
         </nav>
     </header>
-    <main role="main" class="@(Configuration.GetSection("Configuration").GetValue<bool>("FixedNavbar") ? "pt-5":"")">
+    <main role="main">
         @RenderBody()
     </main>
     <footer class="footer bg-light text-center py-4">
@@ -91,7 +91,7 @@
             Copyright &copy; @(DateTime.Now.Year) @(Configuration.GetValue<string>("BlogName")) - @(Configuration.GetValue<string>("Description")) - Powered by <a href="https://github.com/clintnetwork/librum" target="_blank">Librum</a>.
         </div>
     </footer>
-    <partial name="_CookieConsentPartial" />
+    <!-- <partial name="_CookieConsentPartial" /> -->
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
