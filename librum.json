@@ -1,9 +1,15 @@
 {
     "BlogName": "Clint's Blog",
     "Description": "About me and my life",
+    "Keywords": "clint,network,life",
     "Icon": "fa fa-rss",
-    "AuthorName": "Clint.Network",
-    "Twitter": "https://twitter.com/clint_network",
+    "Author": {
+        "Name": "Clint.Network",
+        "Mail": "me@clint.network",
+        "Twitter": "clint_network",
+        "GitHub": "clintnetwork",
+        "Website": "https://stratis.guru"
+    },
     "Website": "https://stratis.guru",
     "DisqusHostname": "clicksguard-io.disqus.com"
 }
