@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using librum.Models;
+using Librum.Models;
 
-namespace librum.Controllers
+namespace Librum.Controllers
 {
     public class HomeController : Controller
     {

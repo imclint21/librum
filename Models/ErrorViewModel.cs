@@ -1,6 +1,6 @@
 using System;
 
-namespace librum.Models
+namespace Librum.Models
 {
     public class ErrorViewModel
     {
