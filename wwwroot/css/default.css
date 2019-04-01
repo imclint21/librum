@@ -1,0 +1,30 @@
+﻿body
+{
+  font-family: -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Oxygen-Sans,
+  Ubuntu,
+  Cantarell,
+  'Helvetica Neue',
+  Helvetica,
+  Arial,
+  sans-serif;
+}
+
+.shadow-sm
+{
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05) !important;
+}
+
+#main-bar
+{
+  padding: 12px 0 !important;
+}
+
+.gravatar
+{
+  border-radius: 50%;
+  cursor: pointer;
+}
