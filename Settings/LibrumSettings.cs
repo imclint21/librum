@@ -8,6 +8,7 @@ namespace Librum.Settings
         public string Icon { get; set; }
         public string CanonicalUri { get; set; }
         public object Author { get; set; }
+        public object Configuration { get; set; }
         public object UsersStore { get; set; }
         public string DisqusHostname { get; set; }
     }

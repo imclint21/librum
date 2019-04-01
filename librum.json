@@ -1,8 +1,8 @@
 {
-    "BlogName": "Clint.Network's Blog",
-    "Description": "About me and my life",
+    "BlogName": "Clint.Network Blog",
+    "Description": "About all my projects and hobbies 🚀.",
     "Keywords": "clint,network,life",
-    "Icon": "fa fa-rss",
+    "Icon": "fas fa-shield-alt",
     "CanonicalUri": "https://blog.clint.network",
     "Author": {
         "Name": "Clint.Network",
@@ -10,6 +10,10 @@
         "Twitter": "clint_network",
         "GitHub": "clintnetwork",
         "Website": "https://stratis.guru"
+    },
+    "Configuration": {
+        "FixedNavbar": true,
+        "DisplayHeader": true
     },
     "UsersStore": [{
         "Role": "Administrator",
