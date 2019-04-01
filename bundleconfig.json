@@ -1,8 +1,13 @@
-[
-    {
+[{
         "outputFileName": "wwwroot/css/default.min.css",
         "inputFiles": [
             "wwwroot/css/default.css"
+        ]
+    },
+    {
+        "outputFileName": "wwwroot/css/markdown.min.css",
+        "inputFiles": [
+            "wwwroot/css/markdown.css"
         ]
     },
     {

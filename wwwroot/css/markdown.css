@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+
+.markdown
+{
+    /* font-family: 'Montserrat', sans-serif; */
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6
+{
+    margin-bottom: 15px;
+}
