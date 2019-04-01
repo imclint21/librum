@@ -25,21 +25,21 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white shadow-sm" id="main-bar">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-adjust"></i> Clint's Blog</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="fas fa-adjust"></i> Clint's Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-2">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="far fa-bookmark"></i></a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy"><i class="far fa-bookmark"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="far fa-bell"></i></a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index"><i class="far fa-bell"></i></a>
                         </li>
                     </ul>
                     <form class="form-inline ml-3">
-                        <button class="btn btn-outline-dark btn-sm my-sm-0" type="submit">New Article</button>
+                        <a class="btn btn-outline-dark btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
                         <div class="dropdown">
                             <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -58,7 +58,7 @@
     </main>
     <footer class="footer bg-light py-4">
         <div class="container">
-            Copyright &copy; 2019 Librum - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            Copyright &copy; 2019 Librum - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <partial name="_CookieConsentPartial" />
