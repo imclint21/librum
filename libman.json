@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "jquery-validation@1.19.0",
+      "destination": "wwwroot/lib/jquery-validation"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive"
+    },
+    {
+      "library": "jquery@3.3.1",
+      "destination": "wwwroot/lib/jquery"
+    }, {
+      "library": "bootstrap@4.3.1",
+      "destination": "wwwroot/lib/bootstrap"
+    },
+    {
+      "library": "popper.js@1.14.6",
+      "destination": "wwwroot/lib/popper.js"
+    },
+    {
+      "library": "nprogress@0.2.0",
+      "destination": "wwwroot/lib/nprogress"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "@fortawesome/fontawesome-free@5.6.3",
+      "destination": "wwwroot/lib/fontawesome"
+    }
+  ]
+}
