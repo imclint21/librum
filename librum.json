@@ -1,5 +1,5 @@
 {
-    "BlogName": "Clint's Blog",
+    "BlogName": "Clint.Network's Blog",
     "Description": "About me and my life",
     "Keywords": "clint,network,life",
     "Icon": "fa fa-rss",
@@ -11,13 +11,10 @@
         "GitHub": "clintnetwork",
         "Website": "https://stratis.guru"
     },
-    "UsersStore":
-    [
-        {
-            "Role": "Administrator",
-            "Email": "me@clint.network",
-            "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08"
-        }
-    ],
+    "UsersStore": [{
+        "Role": "Administrator",
+        "Email": "me@clint.network",
+        "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08"
+    }],
     "DisqusHostname": "clicksguard-io.disqus.com"
 }
