@@ -19,6 +19,11 @@ namespace Librum
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
+                {
+                    config.SetBasePath(Directory.GetCurrentDirectory());
+                    config.AddJsonFile(args.Count() > 0 ? args[0] : "librum.json", optional: false, reloadOnChange: true);
+                })
                 .UseStartup<Startup>();
     }
 }
