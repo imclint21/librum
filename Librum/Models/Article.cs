@@ -12,6 +12,7 @@ namespace Librum.Models
         public string Content { get; set; }
         public DateTime WritedDatetime { get; set; }
         public bool IsDraft { get; set; } = false;
+        public bool Unlisted { get; set; } = false;
         public string AuthorUsername { get; set; }
     }
 }
