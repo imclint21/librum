@@ -1,45 +1,18 @@
-using System;
-using Librum.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Librum.Controllers
-{
-    // [Authorize]
-    [Route("article")]
-    public class ArticleController : Controller
+@model Article
+@{
+    var commentSettings = new CommentSettings()
     {
-        public ArticleController()
-        {
-        }
-
-        [Route("new-post")]
-        public IActionResult New()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [Route("new-post")]
-        public IActionResult New(string article)
-        {
-            return View();
-        }
-
-        [AllowAnonymous]
-        [Route("{slugArticle}")]
-        public IActionResult Article(string slugArticle)
-        {
-            return View(new Article()
-            {
-                Title = "What does SafeBlock.io Offer ?",
-                Description = "It was in 2017 that was born the idea of SafeBlock.io, our philosophy is quite simple, build a platform supplying many services and easy to use for novices we want both create innovative services that the blockchain community needs while making possible the cryptocurrencies usage in the real economy for people.",
-                Keywords = "safebloc,cryptos,currency,cryptocurrencies,clint",
-                IsDraft = false,
-                Slug = "what-does-safeblock-io-offer",
-                AuthorUsername = "clintm",
-                WritedDatetime = DateTime.Parse("2019/04/01 20:30:00"),
-                Content = @"# What does SafeBlock.io Offer ?
+        IsInArticle = true
+    };
+}
+<section class="pt-5 pb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="markdown">
+                    @(Westwind.AspNetCore.Markdown.Markdown.ParseHtmlString(Model.Content))
+<markdown>
+# What does SafeBlock.io Offer ?
 
 ![](https://cdn-images-1.medium.com/max/800/1*eujMWgT83mDixNbLWT7QQQ.png)
 
@@ -73,8 +46,11 @@ How to Join Us
 *    Join our Discord : https://discord.gg/HdsVDn2
 *   Our twitter https://twitter.com/safeblock_io
 
-## Share and Enjoy"
-            });
-        }
-    }
-}
+## Share and Enjoy
+</markdown>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<partial name="_CommentPartial" model="@(commentSettings)" />
