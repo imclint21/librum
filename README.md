@@ -2,6 +2,8 @@
 
 Librum is an opensource, light and ready to use blog system written in C#
 
+![](https://travis-ci.org/clintnetwork/librum.svg?branch=master)
+
 ![image](https://user-images.githubusercontent.com/5221349/55356726-b4355880-54cb-11e9-9bcc-7b1d60c2ff5e.png)
 
 ## Deploy with Docker
