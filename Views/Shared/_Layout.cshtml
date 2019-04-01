@@ -1,9 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@inject IConfiguration Configuration
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Librum | @ViewData["Title"]</title>
+    <meta name="Content-Type" content="UTF-8">
+    <meta name="Description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta name="Keywords" content="@(@ViewData["Keywords"] ?? Configuration.GetValue<string>("Keywords"))">
+    <meta name="Copyright" content="">
+    <meta name="Author" content="Clint Mourlevat">
+    <meta name="DC.Description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta name="DC.Keywords" content="@(@ViewData["Keywords"] ?? Configuration.GetValue<string>("Keywords"))">
+    <meta name="DC.Copyright" content="">
+    <meta name="DC.Author" content="Clint Mourlevat">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -25,7 +35,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white shadow-sm" id="main-bar">
             <div class="container">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="fas fa-adjust"></i> Clint's Blog</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="fas fa-adjust"></i> Clint.Network's Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -39,7 +49,7 @@
                         </li>
                     </ul>
                     <form class="form-inline ml-3">
-                        <a class="btn btn-outline-dark btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
+                        <a class="btn btn-outline-success btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
                         <div class="dropdown">
                             <img gravatar-email="clint.mourlevat@gmail.com" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -56,9 +66,9 @@
     <main role="main">
         @RenderBody()
     </main>
-    <footer class="footer bg-light py-4">
+    <footer class="footer bg-light text-center py-4">
         <div class="container">
-            Copyright &copy; 2019 Librum - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            Copyright &copy; 2019 Librum - Learn more about Clint.Network and his projects 🚀.
         </div>
     </footer>
     <partial name="_CookieConsentPartial" />
