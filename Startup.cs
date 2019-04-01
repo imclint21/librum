@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Markdig;
+using Markdig.Extensions.AutoIdentifiers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Westwind.AspNetCore.Markdown;
 
 namespace Librum
 {
@@ -30,6 +33,25 @@ namespace Librum
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMarkdown(config =>
+            {
+                config.ConfigureMarkdigPipeline = builder =>
+                {
+                    builder.UseEmphasisExtras(Markdig.Extensions.EmphasisExtras.EmphasisExtraOptions.Default)
+                        .UsePipeTables()
+                        .UseGridTables()
+                        .UseAutoIdentifiers(AutoIdentifierOptions.GitHub) // Headers get id="name" 
+                        .UseAutoLinks()
+                        .UseAbbreviations()
+                        .UseYamlFrontMatter()
+                        .UseEmojiAndSmiley(true)
+                        .UseListExtras()
+                        .UseFigures()
+                        .UseTaskLists()
+                        .UseCustomContainers()
+                        .UseGenericAttributes();
+                };
+            });
 
             services.AddMvc();
         }
