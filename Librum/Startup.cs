@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Librum.Settings;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,17 @@ namespace Librum
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddAuthentication(options => 
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/account/login";
+                options.AccessDeniedPath = "/account/forbidden";
+                options.LogoutPath = "/account/logout";
             });
 
             services.AddMarkdown(config =>
@@ -77,6 +89,7 @@ namespace Librum
             // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
