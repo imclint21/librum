@@ -1,4 +1,4 @@
-# Librum Blogging
+# Librum Micro-Blog System
 
 Librum is an opensource, light and ready to use blog system written in C#
 
