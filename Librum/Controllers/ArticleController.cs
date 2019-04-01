@@ -12,7 +12,8 @@ namespace Librum.Controllers
         public ArticleController()
         {
         }
-
+        
+        [Authorize]
         [Route("new-post")]
         public IActionResult New()
         {
@@ -20,6 +21,7 @@ namespace Librum.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("new-post")]
         public IActionResult New(string article)
         {
