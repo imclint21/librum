@@ -11,6 +11,12 @@
         "GitHub": "clintnetwork",
         "Website": "https://stratis.guru"
     },
+    "Menu": [
+        {
+            "Title": "About Librum",
+            "Link": "lol"
+        }
+    ],
     "Configuration": {
         "FixedNavbar": true,
         "DisplayHeader": true

@@ -40,6 +40,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav pt-1 ml-1">
+                        @if(Configuration.GetChildren().Any(x => x.Key == "Menu"))
+                        {
+                            foreach(MenuItem menuItem in Configuration.GetSection("Menu").Get<MenuItem[]>())
+                            {
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link text-dark" href="@menuItem.Link">@menuItem.Title</a>
+                                </li>
+                            }
+                        }
+                    </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item mr-2">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy"><i class="far fa-bookmark"></i></a>
