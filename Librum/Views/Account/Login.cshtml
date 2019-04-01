@@ -1,0 +1,52 @@
+@model Login
+@{
+Layout =    "_Account";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div id="dialog">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="card-title">
+                            <h3 class="text-center pt-2 pb-3">
+                                <i class="@(Configuration.GetValue<string>("Icon"))"></i> @(Configuration.GetValue<string>("BlogName"))
+                            </h3>
+                        </div>
+                        <form method="post" asp-antiforgery="true">
+                            <div class="form-group required">
+                                <label class="required" asp-for="Email"></label>
+                                <input type="text" asp-for="Email" class="form-control" placeholder="Enter username" />
+                                <span class="text-danger small" asp-validation-for="Email"></span>
+                            </div>
+                            <div class="form-group required">
+                                <label class="required" asp-for="Password"></label>
+                                <input type="password" asp-for="Password" class="form-control" placeholder="Enter password" />
+                                <span class="text-danger small" asp-validation-for="Password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-sign-in-alt"></i> Sign in to Librum</button>
+                            </div>
+                            <p class="text-muted">
+                                <small>If you are unable to login, please send an email at @(Configuration.GetValue<string>("Contact")).</small>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center text-muted mt-3">
+                    <small>Copyright &copy; @DateTime.Now.Year Librum - All Rights Reserved</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var windowHeight = $(document).innerHeight();
+            var dialogHeight = $("#dialog").height();
+            $("#dialog").css("marginTop", windowHeight / 2 - dialogHeight / 2 + "px");
+        });
+    </script>
+}
