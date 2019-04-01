@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Librum | @ViewData["Title"]</title>
+    <title>@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]</title>
     <meta name="Content-Type" content="UTF-8">
     <meta name="Description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     <meta name="Keywords" content="@(@ViewData["Keywords"] ?? Configuration.GetValue<string>("Keywords"))">

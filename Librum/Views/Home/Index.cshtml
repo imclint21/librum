@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to " + Configuration.GetValue<string>("BlogName");
 }
 @if(Configuration.GetSection("Configuration").GetValue<bool>("DisplayHeader"))
 {

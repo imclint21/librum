@@ -13,7 +13,8 @@
     {
       "library": "jquery@3.3.1",
       "destination": "wwwroot/lib/jquery"
-    }, {
+    },
+    {
       "library": "bootstrap@4.3.1",
       "destination": "wwwroot/lib/bootstrap"
     },
@@ -26,8 +27,8 @@
       "destination": "wwwroot/lib/nprogress"
     },
     {
-      "provider": "cdnjs",
       "library": "font-awesome@5.7.2",
+      "provider": "cdnjs",
       "destination": "wwwroot/lib/font-awesome/"
     }
   ]

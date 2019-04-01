@@ -1,8 +1,8 @@
 {
-    "BlogName": "Clint.Network Blog",
-    "Description": "About all my projects and hobbies 🚀.",
+    "BlogName": "Librum Blog",
+    "Description": "A little demonstration of Librum 🚀.",
     "Keywords": "clint,network,life",
-    "Icon": "fas fa-shield-alt",
+    "Icon": "fas fa-square",
     "CanonicalUri": "https://blog.clint.network",
     "Author": {
         "Name": "Clint.Network",
