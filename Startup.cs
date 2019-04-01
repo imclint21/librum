@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Librum.Settings;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +27,8 @@ namespace Librum
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<LibrumSettings>(Configuration);
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -54,6 +57,8 @@ namespace Librum
             });
 
             services.AddMvc();
+
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
