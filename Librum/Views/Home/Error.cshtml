@@ -17,7 +17,7 @@
                 </p>
                 }
 
-                The asked requested was unable to executed, maybe the file has been moved or simply removed, this error can also be triggered if the page has crashed, you contact the owner here: @(Configuration.GetSection("Author").GetValue<string>("Mail"))
+                The asked requested was unable to executed, maybe the file has been moved or simply removed, this error can also be triggered if the page has crashed, you contact the owner here: @(Configuration.GetValue<string>("Contact"))
             </div>
         </div>
     </div>
