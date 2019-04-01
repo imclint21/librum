@@ -28,3 +28,33 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.form-group.required label:after {
+  content:"*";
+  margin-left: 5px;
+  color:red;
+}
+
+.btn-primary {
+  background-color: #33cabb;
+  border-color: #33cabb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #52d3c7;
+  border-color: #52d3c7;
+  color: #fff;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: #fff;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: #33cabb;
+  border-color: #33cabb;
+  opacity: 0.5;
+}
