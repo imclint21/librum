@@ -1,4 +1,5 @@
 {
+    "ConnectionString": "Server=localhost;Database=Librum;Username=Librum;Password=rafale",
     "BlogName": "Librum Blog",
     "Description": "A little demonstration of Librum 🚀.",
     "Keywords": "librum,blog,csharp,blogging,netcore,demo",

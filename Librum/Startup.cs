@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Librum.Interfaces;
 using Librum.Settings;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
@@ -31,7 +32,7 @@ namespace Librum
         {
             services.AddDbContext<DatabaseContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(Configuration.GetValue<string>("ConnectionString"));
             });
 
             services.Configure<LibrumSettings>(Configuration);
@@ -42,6 +43,8 @@ namespace Librum
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddTransient<IArticles, Articles>();
 
             services.AddAuthentication(options => 
             {
