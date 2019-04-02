@@ -337,3 +337,4 @@ wwwroot/lib/
 **.min.js
 **.min.css
 **appsettings**.json
+Migrations/
