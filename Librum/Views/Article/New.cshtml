@@ -46,7 +46,15 @@
     <script type="text/javascript">
     $(document).ready(function()
     {
-        var simplemde = new SimpleMDE({ element: $("#markdown-editor")[0] });
+        var simplemde = new SimpleMDE({
+            element: $("#markdown-editor")[0],
+            autosave: {
+                enabled: true,
+                uniqueId: "MyUniqueID",
+                delay: 1000,
+                },
+            spellChecker: false,
+            });
     });
     </script>
 }
