@@ -1,7 +1,7 @@
 using Librum.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Librum.Settings
+namespace Librum
 {
     public class DatabaseContext : DbContext
     {
