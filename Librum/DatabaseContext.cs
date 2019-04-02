@@ -18,10 +18,6 @@ namespace Librum.Settings
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // modelBuilder.Entity<ApplicationUser>().Property(p => p.Id).UseSqlServerIdentityColumn();
-
-            // modelBuilder.Entity<Origin>(entity => entity.Property(x => x.Id).UseSqlServerIdentityColumn());
         }
     }
 }
