@@ -23,6 +23,11 @@
   padding: 12px 0 !important;
 }
 
+.float-right
+{
+  float: right;
+}
+
 .gravatar
 {
   border-radius: 50%;
