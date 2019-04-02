@@ -27,6 +27,13 @@ namespace Librum.Controllers
         }
 
         [Authorize]
+        [Route("about")]
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        [Authorize]
         [Route("settings")]
         public IActionResult Settings()
         {
