@@ -71,3 +71,12 @@ a {
   border-color: #33cabb;
   opacity: 0.5;
 }
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    padding-left: 1rem !important;
+  }
+  .navbar-toggler
+  {
+  }
+}
