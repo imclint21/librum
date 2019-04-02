@@ -22,6 +22,23 @@ namespace Librum.Interfaces
             await _databaseContext.SaveChangesAsync();
         }
 
+        public async Task EditArticleAsync(string slugArticle, Article article)
+        {
+            if(_databaseContext.Articles.Any(x => x.Slug.Equals(slugArticle)))
+            {
+                var oldArticle = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
+                oldArticle = article;
+                await _databaseContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteArticleAsync(string slugArticle)
+        {
+            var article = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
+            _databaseContext.Articles.Remove(article);
+            await _databaseContext.SaveChangesAsync();
+        }
+
         public async Task<List<Article>> GetAllAsync()
         {
             return await _databaseContext.Articles.ToListAsync();
