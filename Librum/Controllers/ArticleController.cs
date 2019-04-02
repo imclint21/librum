@@ -71,6 +71,13 @@ namespace Librum.Controllers
             return View(article);
         }
 
+        [Route("{slugArticle}/delete")]
+        public async Task<IActionResult> Delete(string slugArticle)
+        {
+            await _articles.DeleteArticleAsync(slugArticle);
+            return RedirectToAction("Index", "Home");
+        }
+
         private static string Truncate(string value, int length, string ellipsis, bool keepFullWordAtEnd)
         {
             if (string.IsNullOrEmpty(value)) return string.Empty;
