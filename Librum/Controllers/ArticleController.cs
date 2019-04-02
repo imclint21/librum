@@ -10,7 +10,7 @@ using Slugify;
 
 namespace Librum.Controllers
 {
-    // [Authorize]
+    [Authorize]
     [Route("article")]
     public class ArticleController : Controller
     {
@@ -21,7 +21,6 @@ namespace Librum.Controllers
             _articles = articles;
         }
         
-        [Authorize]
         [Route("new-post")]
         public IActionResult New()
         {
@@ -29,7 +28,6 @@ namespace Librum.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         [Route("new-post")]
         public async Task<IActionResult> New(Article article)
         {
@@ -45,12 +43,31 @@ namespace Librum.Controllers
             }
             return View(article);
         }
-
+        
         [AllowAnonymous]
         [Route("{slugArticle}")]
         public async Task<IActionResult> Article(string slugArticle)
         {
             var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            return View(article);
+        }
+
+        [Route("{slugArticle}/edit")]
+        public async Task<IActionResult> Edit(string slugArticle)
+        {
+            var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            return View(article);
+        }
+
+        [HttpPost]
+        [Route("{slugArticle}/edit")]
+        public async Task<IActionResult> Edit(string slugArticle, Article article)
+        {
+            if (ModelState.IsValid)
+            {
+                await _articles.EditArticleAsync(slugArticle, article);
+                return RedirectToAction("Article", new { slugArticle = article.Slug });
+            }
             return View(article);
         }
 
