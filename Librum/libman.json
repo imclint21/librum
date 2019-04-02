@@ -30,6 +30,10 @@
       "library": "font-awesome@5.7.2",
       "provider": "cdnjs",
       "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "simplemde@1.11.2",
+      "destination": "wwwroot\\lib\\simplemde"
     }
   ]
 }

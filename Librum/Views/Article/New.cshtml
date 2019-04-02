@@ -1,0 +1,21 @@
+@{
+    
+}
+@section Links
+{
+    <link rel="stylesheet" href="~/lib/simplemde/dist/simplemde.min.css">
+}
+<div class="text-center py-5 mt-2">
+    <h1 class="display-5 mt-3">New Article</h1>
+    <p>Fill the form and describe your article.</p>
+</div>
+@section Scripts
+{
+    <script src="~/lib/simplemde/dist/simplemde.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function()
+    {
+        var simplemde = new SimpleMDE({ element: $("#MyID")[0] });
+    });
+    </script>
+}

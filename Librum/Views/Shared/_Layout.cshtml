@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="~/css/default.min.css" />
     <link rel="stylesheet" href="~/css/markdown.min.css" />
     </environment>
+    @RenderSection("Links", required: false)
 </head>
 <body style="@(Configuration.GetSection("Configuration").GetValue<bool>("FixedNavbar") ? "padding-top: 70px":"")">
     <header>
