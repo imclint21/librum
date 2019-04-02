@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Librum.Models;
 using Microsoft.AspNetCore.Authorization;
+using Librum.Interfaces;
 
 namespace Librum.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private IArticles _articles;
+
+        public HomeController(IArticles articles)
         {
-            return View();
+            _articles = articles;
+
+        }
+        
+        public async Task<IActionResult> Index()
+        {
+            var articles = await _articles.GetAllAsync();
+            return View(articles);
         }
 
         [Authorize]
