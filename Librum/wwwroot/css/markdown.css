@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
 
 .markdown
 {
+    font-family: 'Merriweather', serif;
+    line-height: 22pt;
     /* font-family: 'Montserrat', sans-serif; */
 }
 
-.markdown h1,
+.markdown h1:not(:first-child),
 .markdown h2,
 .markdown h3,
 .markdown h4,
 .markdown h5,
 .markdown h6
 {
+    margin-top: 30px;
     margin-bottom: 15px;
 }
