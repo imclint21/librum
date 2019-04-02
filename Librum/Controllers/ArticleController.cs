@@ -38,7 +38,7 @@ namespace Librum.Controllers
                 article.Slug = Slug(article.Title);
                 article.WritedDatetime = DateTime.Now;
                 article.IsDraft = false;
-                article.Description = Truncate(article.Content, 300, "...", true);
+                article.Description = Truncate(article.Content, 300, "…", true);
                 article.AuthorUsername = User.Identity.Name;
                 await _articles.NewArticleAsync(article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
