@@ -49,6 +49,10 @@ namespace Librum.Controllers
         public async Task<IActionResult> Article(string slugArticle)
         {
             var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            if(article == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
             return View(article);
         }
 
