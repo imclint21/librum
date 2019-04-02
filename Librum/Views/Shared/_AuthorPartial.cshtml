@@ -1,0 +1,14 @@
+@model UserStoreItem
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-5 border-top">
+                <img gravatar-email="@(Model.Email)" gravatar-default-image="mm" gravatar-size="64" class="gravatar mr-3 pt-1 float-left dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <div class="pl-5">
+                    <h5>@(Model.FullName ?? "Administrator") <span class="text-muted font-italic small mb-2">(@(Model.Role ?? "Writer"))</span></h5>
+                    <p>@(Model.Bio ?? "I'm the owner of this amazing blog.")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
