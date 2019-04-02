@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Article>
+@{
     ViewData["Title"] = "Welcome to " + Configuration.GetValue<string>("BlogName");
 }
 @if(Configuration.GetSection("Configuration").GetValue<bool>("DisplayHeader"))
@@ -18,51 +19,27 @@ else
         </div>
     </div>
 }
-<section id="" class="pb-4">
+<section id="articles" class="pb-4">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-0 mb-1">
-                    <div class="card-body">
-                        <h3 class="card-title">Stake your $STRAT on Raspberry PI 3</h3>
-                        <p class="card-text">Staking $STRAT can be difficult if you want to do this locally and you do not want to buy a server or keep your computer always up (costs…</p>
-                        <p class="card-text"><small class="text-muted">Last edited 5 months ago &bull; 1 min read (162 words) so far</small></p>
+        @foreach(var article in Model)
+        {
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card border-0 mb-1">
+                        <div class="card-body">
+                            <div class="float-right">
+                                <a asp-controller="Article" asp-action="Edit" asp-route-slugArticle="@(article.Slug)" class="btn btn-sm btn-outline-secondary">Edit Article</a>
+                                <a asp-controller="Article" asp-action="Delete" asp-route-slugArticle="@(article.Slug)" class="btn btn-sm btn-outline-danger">Delete Article</a>
+                            </div>
+                            <h3 class="card-title">
+                                <a asp-controller="Article" asp-action="Article" asp-route-slugArticle="@article.Slug" class="inherit">@article.Title</a>
+                            </h3>
+                            <p class="card-text">@article.Description</p>
+                            <p class="card-text"><small class="text-muted">Last edited @(article.WritedDatetime.TimeAgo()) &bull; 1 min read (162 words) so far</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-0 mb-1">
-                    <div class="card-body">
-                        <h3 class="card-title">Débuter avec .Net Core (MVC)</h3>
-                        <p class="card-text">Vue d’ensemble de la technologie Microsoft .Net Core</p>
-                        <p class="card-text"><small class="text-muted">Last edited 5 months ago &bull; 1 min read (162 words) so far</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-0 mb-1">
-                    <div class="card-body">
-                        <h3 class="card-title">Apprenez à Utiliser PGP</h3>
-                        <p class="card-text">PGP est un logiciel de chiffrement et d’authentification, il supporte plusieurs algorithmes comme RSA, DSA, ou EcDSA, il est utilisé pour…</p>
-                        <p class="card-text"><small class="text-muted">Last edited 5 months ago &bull; 1 min read (162 words) so far</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-0 mb-1">
-                    <div class="card-body">
-                        <h3 class="card-title">Deployer un Serveur OpenVPN</h3>
-                        <p class="card-text">Il existe un moyen très simple pour créer son propre serveur VPN en deux commandes Linux, pour cela, nous allons installer OpenVPN AS.</p>
-                        <p class="card-text"><small class="text-muted">Last edited 5 months ago &bull; 1 min read (162 words) so far</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>
