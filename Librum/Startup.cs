@@ -45,6 +45,7 @@ namespace Librum
             });
 
             services.AddTransient<IArticles, Articles>();
+            services.AddTransient<IUsers, Users>();
 
             services.AddAuthentication(options => 
             {
