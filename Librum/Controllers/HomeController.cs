@@ -12,7 +12,7 @@ namespace Librum.Controllers
 {
     public class HomeController : Controller
     {
-        private IArticles _articles;
+        private readonly IArticles _articles;
 
         public HomeController(IArticles articles)
         {

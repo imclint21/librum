@@ -16,7 +16,7 @@ namespace Librum.Controllers
     [Route("account")]
     public class AccountController : Controller
     {
-        private IConfiguration Configuration;
+        public IConfiguration Configuration { get; }
 
         public AccountController(IConfiguration configuration)
         {
