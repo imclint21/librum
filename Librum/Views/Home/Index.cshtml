@@ -39,7 +39,7 @@ else
                                 <a asp-controller="Article" asp-action="Article" asp-route-slugArticle="@article.Slug" class="inherit">@article.Title</a>
                             </h3>
                             <p class="card-text">
-                                @Markdown.ToPlainText(article.Description)
+                                @article.Description
                             </p>
                             <p class="card-text"><small class="text-muted">Last edited @(article.WritedDatetime.TimeAgo()) &bull; @(article.Content.WordsCount()) words at most</small></p>
                         </div>
