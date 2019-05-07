@@ -30,16 +30,7 @@ namespace Librum.Interfaces
         {
             if(_databaseContext.Articles.Any(x => x.Slug.Equals(slugArticle)))
             {
-                var previousArticle = _databaseContext.Articles.First(x => x.Slug == slugArticle);
-                previousArticle.Slug = article.Slug;
-                previousArticle.WritedDatetime = DateTime.Now;
-                previousArticle.Title = article.Title;
-                previousArticle.Content = article.Content;
-                previousArticle.Description = Markdown.ToPlainText(article.Content);
-                previousArticle.AuthorUsername = article.AuthorUsername;
-                previousArticle.Keywords = article.Keywords;
-                previousArticle.IsDraft = article.IsDraft;
-                previousArticle.Unlisted = article.Unlisted;
+                _databaseContext.Articles.Update(article);
                 await _databaseContext.SaveChangesAsync();
             }
         }

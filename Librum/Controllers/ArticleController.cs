@@ -71,8 +71,14 @@ namespace Librum.Controllers
             if (ModelState.IsValid)
             {
                 article.Slug = Slug(article.Title);
+                article.Title = article.Title;
+                article.WritedDatetime = DateTime.Now;
+                article.Content = article.Content;
+                article.Description = Truncate(Markdown.ToPlainText(article.Content), 300, "…", true);
                 article.AuthorUsername = User.Identity.Name;
-                // return Content(JsonConvert.SerializeObject(article));
+                article.Keywords = article.Keywords;
+                article.IsDraft = false;
+                article.Unlisted = false;
                 await _articles.EditArticleAsync(slugArticle, article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
             }
