@@ -23,6 +23,10 @@ namespace Librum.Controllers
         public async Task<IActionResult> Index()
         {
             var articles = await _articles.GetAllAsync();
+            if(!User.Identity.IsAuthenticated)
+            {
+                articles = articles.Where(x => !x.IsDraft).ToList();
+            }
             return View(articles.OrderByDescending(x => x.WritedDatetime).ToList());
         }
 
