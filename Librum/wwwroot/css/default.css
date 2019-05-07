@@ -1,4 +1,10 @@
-﻿body {
+﻿html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -70,6 +76,14 @@ a {
   background-color: #33cabb;
   border-color: #33cabb;
   opacity: 0.5;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
