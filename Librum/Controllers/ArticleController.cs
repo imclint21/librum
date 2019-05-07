@@ -35,10 +35,14 @@ namespace Librum.Controllers
             if(ModelState.IsValid)
             {
                 article.Slug = Slug(article.Title);
+                article.Title = article.Title;
                 article.WritedDatetime = DateTime.Now;
-                article.IsDraft = false;
+                article.Content = article.Content;
                 article.Description = Truncate(Markdown.ToPlainText(article.Content), 300, "…", true);
                 article.AuthorUsername = User.Identity.Name;
+                article.Keywords = article.Keywords;
+                article.IsDraft = article.IsDraft;
+                article.Unlisted = article.Unlisted;
                 await _articles.NewArticleAsync(article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
             }
@@ -77,8 +81,8 @@ namespace Librum.Controllers
                 article.Description = Truncate(Markdown.ToPlainText(article.Content), 300, "…", true);
                 article.AuthorUsername = User.Identity.Name;
                 article.Keywords = article.Keywords;
-                article.IsDraft = false;
-                article.Unlisted = false;
+                article.IsDraft = article.IsDraft;
+                article.Unlisted = article.Unlisted;
                 await _articles.EditArticleAsync(slugArticle, article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
             }
