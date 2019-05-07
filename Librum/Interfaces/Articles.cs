@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Librum.Models;
 using Librum.Settings;
+using Markdig;
 using Microsoft.EntityFrameworkCore;
 
 namespace Librum.Interfaces
@@ -26,8 +28,12 @@ namespace Librum.Interfaces
         {
             if(_databaseContext.Articles.Any(x => x.Slug.Equals(slugArticle)))
             {
-                var oldArticle = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
-                oldArticle = article;
+                var previousArticle = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
+                previousArticle.Title = article.Title;
+                previousArticle.Content = article.Content;
+                previousArticle.Description = Markdown.ToPlainText(article.Content);
+                previousArticle.Keywords = article.Keywords;
+                previousArticle.WritedDatetime = DateTime.Now;
                 await _databaseContext.SaveChangesAsync();
             }
         }
