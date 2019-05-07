@@ -70,6 +70,9 @@ namespace Librum.Controllers
         {
             if (ModelState.IsValid)
             {
+                article.Slug = Slug(article.Title);
+                article.AuthorUsername = User.Identity.Name;
+                // return Content(JsonConvert.SerializeObject(article));
                 await _articles.EditArticleAsync(slugArticle, article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
             }

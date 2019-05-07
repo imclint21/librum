@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Librum.Models;
 using Librum.Settings;
 using Markdig;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace Librum.Interfaces
 {
@@ -28,19 +30,23 @@ namespace Librum.Interfaces
         {
             if(_databaseContext.Articles.Any(x => x.Slug.Equals(slugArticle)))
             {
-                var previousArticle = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
+                var previousArticle = _databaseContext.Articles.First(x => x.Slug == slugArticle);
+                previousArticle.Slug = article.Slug;
+                previousArticle.WritedDatetime = DateTime.Now;
                 previousArticle.Title = article.Title;
                 previousArticle.Content = article.Content;
                 previousArticle.Description = Markdown.ToPlainText(article.Content);
+                previousArticle.AuthorUsername = article.AuthorUsername;
                 previousArticle.Keywords = article.Keywords;
-                previousArticle.WritedDatetime = DateTime.Now;
+                previousArticle.IsDraft = article.IsDraft;
+                previousArticle.Unlisted = article.Unlisted;
                 await _databaseContext.SaveChangesAsync();
             }
         }
 
         public async Task DeleteArticleAsync(string slugArticle)
         {
-            var article = _databaseContext.Articles.First(x => x.Slug.Equals(slugArticle));
+            var article = _databaseContext.Articles.First(x => x.Slug == slugArticle);
             _databaseContext.Articles.Remove(article);
             await _databaseContext.SaveChangesAsync();
         }
@@ -50,9 +56,9 @@ namespace Librum.Interfaces
             return await _databaseContext.Articles.ToListAsync();
         }
 
-        public async Task<Article> GetArticleBySlugAsync(string slug)
+        public async Task<Article> GetArticleBySlugAsync(string slugArticle)
         {
-            var article = await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug.Equals(slug));
+            var article = await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug == slugArticle);
             return article;
         }
     }
