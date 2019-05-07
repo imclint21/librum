@@ -33,7 +33,7 @@
     },
     {
       "library": "simplemde@1.11.2",
-      "destination": "wwwroot\\lib\\simplemde"
+      "destination": "wwwroot/lib/simplemde"
     }
   ]
 }
