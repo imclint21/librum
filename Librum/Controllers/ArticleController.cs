@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Librum.Interfaces;
 using Librum.Models;
+using Markdig;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -36,7 +37,7 @@ namespace Librum.Controllers
                 article.Slug = Slug(article.Title);
                 article.WritedDatetime = DateTime.Now;
                 article.IsDraft = false;
-                article.Description = Truncate(article.Content, 300, "…", true);
+                article.Description = Truncate(Markdown.ToPlainText(article.Content), 300, "…", true);
                 article.AuthorUsername = User.Identity.Name;
                 await _articles.NewArticleAsync(article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
