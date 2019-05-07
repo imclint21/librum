@@ -96,6 +96,13 @@ namespace Librum.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Route("{slugArticle}/publish")]
+        public async Task<IActionResult> Publish(string slugArticle)
+        {
+            await _articles.PublishArticleAsync(slugArticle);
+            return RedirectToAction("Index", "Home");
+        }
+
         private static string Truncate(string value, int length, string ellipsis, bool keepFullWordAtEnd)
         {
             if (string.IsNullOrEmpty(value)) return string.Empty;

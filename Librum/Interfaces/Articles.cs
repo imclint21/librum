@@ -42,6 +42,13 @@ namespace Librum.Interfaces
             await _databaseContext.SaveChangesAsync();
         }
 
+        public async Task PublishArticleAsync(string slugArticle)
+        {
+            var article = _databaseContext.Articles.First(x => x.Slug == slugArticle);
+            article.IsDraft = false;
+            await _databaseContext.SaveChangesAsync();
+        }
+
         public async Task<List<Article>> GetAllAsync()
         {
             return await _databaseContext.Articles.ToListAsync();

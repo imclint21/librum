@@ -31,6 +31,10 @@ else
                             @if(User.Identity.IsAuthenticated)
                             {
                                 <div class="float-right">
+                                    @if(article.IsDraft)
+                                    {
+                                        <a asp-controller="Article" asp-action="Publish" asp-route-slugArticle="@(article.Slug)" class="btn btn-sm btn-outline-success"><i class="fas fa-check"></i><span class="d-lg-inline d-none"> Publish</span></a>
+                                    }
                                     <a asp-controller="Article" asp-action="Edit" asp-route-slugArticle="@(article.Slug)" class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i><span class="d-lg-inline d-none"> Edit Article</span></a>
                                     <a asp-controller="Article" asp-action="Delete" asp-route-slugArticle="@(article.Slug)" onclick="return confirm('Do you really want to delete this article ?');" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash-alt"></i><span class="d-lg-inline d-none"> Delete Article</span></a>
                                 </div>
