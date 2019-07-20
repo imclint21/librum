@@ -54,7 +54,10 @@ namespace Librum.Interfaces
 
         public async Task<Article> GetArticleBySlugAsync(string slugArticle)
         {
-            return await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug == slugArticle); ;
+            var article = await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug == slugArticle); ;
+            article.ReadCount++;
+            await _databaseContext.SaveChangesAsync();
+            return article;
         }
 
         public async Task<List<Article>> GetSearchResultAsync(string terms) => await _databaseContext.Articles.Where(x => x.Title.Contains(terms) || x.Content.Contains(terms)).ToListAsync();
