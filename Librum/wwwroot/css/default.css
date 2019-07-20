@@ -21,6 +21,15 @@ a {
     padding: 12px 0 !important;
 }
 
+#links-menu .nav-item {
+    opacity: 0.7;
+    transition: 0.3s ease all;
+}
+
+    #links-menu .nav-item:hover {
+        opacity: 1;
+    }
+
 .float-right {
     float: right;
 }

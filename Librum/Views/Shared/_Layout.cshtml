@@ -42,7 +42,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav pt-1 ml-1">
+                    <ul class="navbar-nav pt-1 ml-3" id="links-menu">
                         @if(Configuration.GetChildren().Any(x => x.Key == "Menu"))
                         {
                             foreach(MenuItem menuItem in Configuration.GetSection("Menu").Get<MenuItem[]>())
