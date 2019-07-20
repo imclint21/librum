@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Westwind.AspNetCore.Markdown;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
+using System;
 
 namespace Librum
 {
@@ -41,7 +42,11 @@ namespace Librum
             services.AddTransient<Articles>();
             services.AddTransient<Users>();
 
-            services.AddSession();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(365);
+                options.Cookie.IsEssential = true;
+            });
 
             services.AddAuthentication(options => 
             {
