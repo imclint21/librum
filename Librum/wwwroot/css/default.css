@@ -17,6 +17,7 @@ a {
 }
 
 #main-bar {
+    z-index: 7;
     padding: 12px 0 !important;
 }
 
