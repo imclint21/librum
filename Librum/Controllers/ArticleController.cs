@@ -1,13 +1,12 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Librum.Interfaces;
-using Librum.Models;
-using Markdig;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using Markdig;
 using Slugify;
+using Librum.Interfaces;
+using Librum.Models;
 
 namespace Librum.Controllers
 {

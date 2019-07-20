@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Librum.Interfaces;
+﻿using Librum.Interfaces;
 using Librum.Settings;
-using Markdig;
-using Markdig.Extensions.AutoIdentifiers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Westwind.AspNetCore.Markdown;
+using Markdig;
+using Markdig.Extensions.AutoIdentifiers;
 
 namespace Librum
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace Librum.Models
 {
     public class ErrorViewModel
