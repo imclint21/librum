@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,6 +58,8 @@ namespace Librum.Interfaces
         }
 
         public async Task<List<Article>> GetSearchResultAsync(string terms) => await _databaseContext.Articles.Where(x => x.Title.Contains(terms) || x.Content.Contains(terms)).ToListAsync();
+
+        public async Task<List<Article>> GetSavedArticlesAsync(List<string> bookmarks) => await _databaseContext.Articles.Where(x => bookmarks.Contains(x.Id)).ToListAsync();
 
         public bool IsInBookmarks(string id)
         {

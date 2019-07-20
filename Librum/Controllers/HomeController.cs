@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Librum.Models;
 using Librum.Interfaces;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Librum.Controllers
 {
@@ -57,6 +60,18 @@ namespace Librum.Controllers
                 articles = articles.Where(x => !x.IsDraft).ToList();
             }
             return View(articles.OrderByDescending(x => x.WritedDatetime).ToList());
+        }
+
+        [Route("saved-articles")]
+        public async Task<IActionResult> SavedArticles()
+        {
+            var bookmarks = new List<string>();
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Bookmarks")))
+            {
+                bookmarks = JsonConvert.DeserializeObject<string[]>(HttpContext.Session.GetString("Bookmarks")).ToList();
+            }
+            var articles = await _articles.GetSavedArticlesAsync(bookmarks);
+            return View(articles);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
