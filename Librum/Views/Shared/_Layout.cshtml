@@ -90,7 +90,7 @@
     </main>
     <footer class="footer bg-light text-center py-4">
         <div class="container">
-            Copyright &copy; @(DateTime.Now.Year) @(Configuration.GetValue<string>("BlogName")) - @(Configuration.GetValue<string>("Description")) - Powered by <a href="https://github.com/clintnetwork/librum" target="_blank">Librum</a>.
+            Copyright &copy; @(DateTime.Now.Year) <span title="@(Configuration.GetValue<string>("Description"))">@(Configuration.GetValue<string>("BlogName"))</span> - Powered by <a href="https://github.com/clintnetwork/librum" target="_blank">Librum</a>.
         </div>
     </footer>
     <!-- <partial name="_CookieConsentPartial" /> -->
