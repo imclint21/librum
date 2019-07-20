@@ -3,6 +3,8 @@ feather.replace();
 
 // On document ready
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+
     $(".markdown").find("h2,h3,h4,h5,h6").addClass("clickable-link")
 
     $(".clickable-link").click(function () {
@@ -15,6 +17,16 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: $(this).position().top }, "slow");
     });
 })
+
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 200) {
+        $("#like-sidebar").fadeIn();
+    }
+    if (scroll < 100) {
+        $("#like-sidebar").fadeOut();
+    }
+});
 
 // When an article is liked
 function Liked() {

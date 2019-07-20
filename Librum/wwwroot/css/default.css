@@ -110,6 +110,7 @@ main {
     position: fixed;
     margin: 200px 0 0 -150px;
     width: 130px;
+    display: none;
 }
 
     #like-sidebar .liked {
