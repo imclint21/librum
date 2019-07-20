@@ -95,11 +95,26 @@ main {
     }
 }
 
-.feather {
+.icon {
     width: 18px !important;
     height: 18px !important;
     margin-bottom: 3px;
 }
+
+    .icon.h1 {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+#like-sidebar {
+    position: fixed;
+    margin: 200px 0 0 -150px;
+    width: 130px;
+}
+
+    #like-sidebar .liked {
+        color: #b74040 !important;
+    }
 
 .clickable-link {
     cursor: pointer;

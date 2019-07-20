@@ -57,5 +57,23 @@ namespace Librum.Interfaces
         }
 
         public async Task<List<Article>> GetSearchResultAsync(string terms) => await _databaseContext.Articles.Where(x => x.Title.Contains(terms) || x.Content.Contains(terms)).ToListAsync();
+
+        public bool IsInBookmarks(string id)
+        {
+            if (_httpContextAccessor.HttpContext.Session.GetString("Bookmarks") != null)
+            {
+                return JsonConvert.DeserializeObject<string[]>(_httpContextAccessor.HttpContext.Session.GetString("Bookmarks")).Contains(id);
+            }
+            return false;
+        }
+
+        public bool IsLiked(string id)
+        {
+            if (_httpContextAccessor.HttpContext.Session.GetString("Liked") != null)
+            {
+                return JsonConvert.DeserializeObject<string[]>(_httpContextAccessor.HttpContext.Session.GetString("Liked")).Contains(id);
+            }
+            return false;
+        }
     }
 }

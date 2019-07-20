@@ -9,7 +9,7 @@ namespace Librum.Interfaces
     {
         public IConfiguration Configuration { get; }
 
-        private List<UserStoreItem> _usersStore;
+        private readonly List<UserStoreItem> _usersStore;
 
         public Users(IConfiguration configuration)
         {

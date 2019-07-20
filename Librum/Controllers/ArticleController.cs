@@ -7,6 +7,10 @@ using Markdig;
 using Slugify;
 using Librum.Interfaces;
 using Librum.Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Librum.Controllers
 {
@@ -102,6 +106,63 @@ namespace Librum.Controllers
         {
             await _articles.PublishArticleAsync(slugArticle);
             return RedirectToAction("Index", "Home");
+        }
+
+        [Route("{slugArticle}/like")]
+        public async Task<IActionResult> Like(string slugArticle)
+        {
+            var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            if (article == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            var liked = new List<string>();
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Liked")))
+            {
+                liked = JsonConvert.DeserializeObject<string[]>(HttpContext.Session.GetString("Liked")).ToList();
+            }
+            liked.Add(article.Id);
+            HttpContext.Session.SetString("Liked", JsonConvert.SerializeObject(liked));
+            return Ok();
+        }
+
+        [Route("{slugArticle}/unlike")]
+        public async Task<IActionResult> Unlike(string slugArticle)
+        {
+            var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            if (article == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            try
+            {
+                var liked = JsonConvert.DeserializeObject<string[]>(HttpContext.Session.GetString("Liked")).ToList();
+                liked.Remove(article.Id);
+                HttpContext.Session.SetString("Liked", JsonConvert.SerializeObject(liked));
+            }
+            catch { }
+            return Ok();
+        }
+
+        [Route("{slugArticle}/bookmark")]
+        public async Task<IActionResult> Bookmark(string slugArticle)
+        {
+            var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            if (article == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            var bookmarks = new List<string>();
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("Bookmarks")))
+            {
+                bookmarks = JsonConvert.DeserializeObject<string[]>(HttpContext.Session.GetString("Bookmarks")).ToList();
+            }
+            bookmarks.Add(article.Id);
+            HttpContext.Session.SetString("Bookmarks", JsonConvert.SerializeObject(bookmarks));
+            return Ok();
         }
 
         private static string Truncate(string value, int length, string ellipsis, bool keepFullWordAtEnd)

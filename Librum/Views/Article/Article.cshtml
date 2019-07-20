@@ -8,11 +8,28 @@
         IsInArticle = true
     };
     var articleOwner = Users.GetUserByEmail(Model.AuthorUsername);
+    var isBookmarked = Articles.IsInBookmarks(Model.Id);
+    var isLiked = Articles.IsLiked(Model.Id);
 }
 <section class="pt-5 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div id="like-sidebar" class="text-center">
+                    <h2 class="mb-3">
+                        @if (!isLiked)
+                        {
+                            <a class="inherit" asp-controller="Article" asp-action="Like" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="far fa-heart"></i></a>
+                        }
+                        else
+                        {
+                            <a class="inherit" asp-controller="Article" asp-action="Unlike" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="far liked fa-heart"></i></a>
+                        }
+                    </h2>
+                    <h6>
+                        <a class="inherit" asp-controller="Article" asp-action="Bookmark" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="fa@(isBookmarked ? "s":"r") fa-bookmark mt-3"></i></a>
+                    </h6>
+                </div>
                 <div class="markdown">
                     @(Westwind.AspNetCore.Markdown.Markdown.ParseHtmlString(Model.Content))
                 </div>
