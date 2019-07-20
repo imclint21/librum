@@ -41,6 +41,8 @@ namespace Librum
             services.AddTransient<Articles>();
             services.AddTransient<Users>();
 
+            services.AddSession();
+
             services.AddAuthentication(options => 
             {
                 options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -93,6 +95,7 @@ namespace Librum
 
             // app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
             app.UseAuthentication();
 
