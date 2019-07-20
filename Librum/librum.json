@@ -1,32 +1,32 @@
 {
-    "ConnectionString": "Server=localhost;Database=Librum;Username=Librum;Password=rafale",
-    "BlogName": "Librum Blog",
-    "Description": "A little demonstration of Librum 🚀.",
-    "Keywords": "librum,blog,csharp,blogging,netcore,demo",
-    "Icon": "fas fa-square",
-    "CanonicalUri": "https://blog.clint.network",
-    "Contact": "support@librum.org",
-    "Twitter": "clint_network",
-    "Github": "clintnetwork",
-    "Menu": [
-        {
-            "Title": "About Librum",
-            "Link": "/article/about"
-        }
-    ],
-    "Configuration": {
-        "FixedNavbar": false,
-        "DisplayHeader": true
-    },
-    "UsersStore": [{
-        "Role": "Administrator",
-        "Email": "me@clint.network",
-        "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08",
-        "FullName": "Clint.Network",
-        "Bio": "With SafeBlock.io Keep all your Cryptos in a Perfect Security 👌 Secured Wallet, Merchant solutions, Debit Card and More. ICO incoming. 🚀",
-        "Twitter": "clint_network",
-        "GitHub": "clintnetwork",
-        "Website": "https://stratis.guru"
-    }],
-    "DisqusHostname": "clicksguard-io.disqus.com"
+  "BlogName": "Librum Blog",
+  "Description": "A little demonstration of Librum 🚀.",
+  "Keywords": "librum,blog,csharp,blogging,netcore,demo",
+  "Icon": "fas fa-square",
+  "CanonicalUri": "https://clint.network",
+  "Contact": "contact@librum.org",
+  "Twitter": "librum",
+  "Github": "clintnetwork/librum",
+  "Menu": [
+    {
+      "Title": "About Librum",
+      "Link": "/article/about"
+    }
+  ],
+  "Configuration": {
+    "FixedNavbar": false,
+    "DisplayHeader": true
+  },
+  "UsersStore": [
+    {
+      "Role": "Administrator",
+      "Email": "contact@librum.org",
+      "Password": "PASSWORD_IN_SHA1",
+      "FullName": "Librum Blog",
+      "Twitter": "librum",
+      "GitHub": "clintnetwork/librum",
+      "Website": "https://librum.org"
+    }
+  ],
+  "DisqusHostname": "librum.disqus.com"
 }
