@@ -38,6 +38,10 @@
     {
       "library": "feather-icons@4.22.1",
       "destination": "wwwroot/lib/feather-icons"
+    },
+    {
+      "library": "node-snackbar@0.1.15",
+      "destination": "wwwroot/lib/node-snackbar"
     }
   ]
 }
