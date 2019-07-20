@@ -9,7 +9,7 @@ Librum is an opensource, lightweight and ready to use blog engine written in C#
 
 ## How to Deploy
 
-[Read the Tutorial](https://clint.network/article/have-a-blog-with-librum)
+👉 [Read the Tutorial](https://clint.network/article/have-a-blog-with-librum)
 
 ## Deploy with Docker
 
