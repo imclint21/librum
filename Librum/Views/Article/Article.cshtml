@@ -19,15 +19,22 @@
                     <h2 class="mb-3">
                         @if (!isLiked)
                         {
-                            <a class="inherit" asp-controller="Article" asp-action="Like" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="far fa-heart"></i></a>
+                            <a class="inherit" asp-controller="Article" asp-action="Like" asp-route-slugArticle="@Model.Slug" data-ajax="true" data-ajax-success="Liked"><i class="far fa-heart"></i></a>
                         }
                         else
                         {
-                            <a class="inherit" asp-controller="Article" asp-action="Unlike" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="far liked fa-heart"></i></a>
+                            <a class="inherit" asp-controller="Article" asp-action="Unlike" asp-route-slugArticle="@Model.Slug" data-ajax="true" data-ajax-success="Liked"><i class="far liked fa-heart"></i></a>
                         }
                     </h2>
                     <h6>
-                        <a class="inherit" asp-controller="Article" asp-action="Bookmark" asp-route-slugArticle="@Model.Slug" data-ajax="true"><i class="fa@(isBookmarked ? "s":"r") fa-bookmark mt-3"></i></a>
+                        @if (!isBookmarked)
+                        {
+                            <a class="inherit" asp-controller="Article" asp-action="Bookmark" asp-route-slugArticle="@Model.Slug" data-ajax="true" data-ajax-success="Bookmarked"><i class="far fa-bookmark mt-3"></i></a>
+                        }
+                        else
+                        {
+                            <a class="inherit" asp-controller="Article" asp-action="Unbookmark" asp-route-slugArticle="@Model.Slug" data-ajax="true" data-ajax-success="Bookmarked"><i class="fas fa-bookmark mt-3"></i></a>
+                        }
                     </h6>
                 </div>
                 <div class="markdown">

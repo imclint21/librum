@@ -165,6 +165,25 @@ namespace Librum.Controllers
             return Ok();
         }
 
+        [Route("{slugArticle}/unbookmark")]
+        public async Task<IActionResult> Unbookmark(string slugArticle)
+        {
+            var article = await _articles.GetArticleBySlugAsync(slugArticle);
+            if (article == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+
+            try
+            {
+                var liked = JsonConvert.DeserializeObject<string[]>(HttpContext.Session.GetString("Bookmarks")).ToList();
+                liked.Remove(article.Id);
+                HttpContext.Session.SetString("Bookmarks", JsonConvert.SerializeObject(liked));
+            }
+            catch { }
+            return Ok();
+        }
+
         private static string Truncate(string value, int length, string ellipsis, bool keepFullWordAtEnd)
         {
             if (string.IsNullOrEmpty(value)) return string.Empty;

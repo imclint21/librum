@@ -15,3 +15,25 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: $(this).position().top }, "slow");
     });
 })
+
+// When an article is liked
+function Liked() {
+    if ($("a").find(".fa-heart").hasClass("liked")) {
+        $("a").find(".fa-heart").removeClass("liked");
+    }
+    else {
+        $("a").find(".fa-heart").addClass("liked");
+        Snackbar.show({ pos: "bottom-center", text: "Your like has been saved." });
+    }
+}
+
+// When an article is bookmarked
+function Bookmarked() {
+    if ($("#like-sidebar a").find(".fa-bookmark").hasClass("far")) {
+        Snackbar.show({ pos: "bottom-center", text: "Article successfully bookmarked." });
+        $("#like-sidebar a").find(".fa-bookmark").removeClass("far").addClass("fas");
+    }
+    else {
+        $("#like-sidebar a").find(".fa-bookmark").addClass("far").removeClass("fas");
+    }
+}
