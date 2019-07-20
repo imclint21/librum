@@ -1,4 +1,4 @@
-# Librum Micro-Blog
+# Librum
 
 Librum is an opensource, lightweight and ready to use blog engine written in C#
 
