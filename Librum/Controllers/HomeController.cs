@@ -45,6 +45,11 @@ namespace Librum.Controllers
         [Route("search")]
         public async Task<IActionResult> Search(string terms)
         {
+            if(string.IsNullOrWhiteSpace(terms))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
             ViewBag.Terms = terms;
             var articles = await _articles.GetSearchResultAsync(terms);
             if (!User.Identity.IsAuthenticated)
