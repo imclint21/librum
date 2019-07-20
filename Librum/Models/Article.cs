@@ -20,6 +20,8 @@ namespace Librum.Models
         [Required]
         public string Content { get; set; }
         public DateTime WritedDatetime { get; set; }
+        public int ReadCount { get; set; } = 0;
+        public int LikeCount { get; set; } = 0;
         public bool IsDraft { get; set; } = false;
         public bool Unlisted { get; set; } = false;
         public string AuthorUsername { get; set; }
