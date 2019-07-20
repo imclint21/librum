@@ -42,6 +42,8 @@ namespace Librum.Controllers
                 article.Keywords = article.Keywords;
                 article.IsDraft = article.IsDraft;
                 article.Unlisted = article.Unlisted;
+                article.LikeCount = 0;
+                article.ReadCount = 0;
                 await _articles.NewArticleAsync(article);
                 return RedirectToAction("Article", new { slugArticle = article.Slug });
             }
