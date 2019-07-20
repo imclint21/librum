@@ -6,31 +6,31 @@
     <title>@(Configuration.GetValue<string>("BlogName")) | ds</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
-        <link rel="stylesheet" type="text/css" href="~/lib/themify-icons" />
-        <link rel="stylesheet" href="~/css/default.css" />
-        <link rel="stylesheet" href="~/css/markdown.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/themify-icons" />
+    <link rel="stylesheet" href="~/css/default.css" />
+    <link rel="stylesheet" href="~/css/markdown.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link href="~/lib/nprogress/nprogress.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
-        <link rel="stylesheet" href="~/css/default.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/nprogress/nprogress.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/default.min.css" />
     </environment>
 </head>
 <body class="bg-light">
     @RenderBody()
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="~/js/default.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/default.js"></script>
     </environment>
     <environment exclude="Development">
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="~/js/default.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/default.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
 </body>
