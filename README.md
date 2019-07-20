@@ -1,6 +1,6 @@
 # Librum Micro-Blog
 
-Librum is an opensource, light and ready to use blog system written in C#
+Librum is an opensource, lightweight and ready to use blog engine written in C#
 
 ![](https://travis-ci.org/clintnetwork/librum.svg?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
