@@ -18,16 +18,16 @@
                     <div class="form-group required">
                         <span class="text-danger small float-right" asp-validation-for="Title"></span>
                         <label>Enter a Nice Title</label>
-                        <input type="text" class="form-control" asp-for="Title" placeholder="Enter the title of your article" />
+                        <input type="text" class="form-control form-control-lg" asp-for="Title" placeholder="Enter the title of your article" />
                     </div>
                     <div class="form-group required">
                         <span class="text-danger small float-right" asp-validation-for="Content"></span>
-                        <label>Post Content</label>
+                        <label>Post Content (Markdown)</label>
                         <textarea class="form-control" id="markdown-editor" asp-for="Content" placeholder="Enter the content of your article"></textarea>
                     </div>
                     <div class="form-group required">
                         <span class="text-danger small float-right" asp-validation-for="Keywords"></span>
-                        <label>Mots Clés</label>
+                        <label>Keywords (Important for SEO)</label>
                         <input type="text" class="form-control" asp-for="Keywords" placeholder="Enter some tags separated by comas" />
                     </div>
                     <div class="form-group">
