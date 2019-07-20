@@ -9,7 +9,7 @@ Librum is an opensource, lightweight and ready to use blog engine written in C#
 
 ## How to Deploy
 
-👉 [Read the Tutorial](https://clint.network/article/have-a-blog-with-librum)
+[Read the Tutorial](https://clint.network/article/have-a-blog-with-librum)
 
 ## Deploy with Docker
 
@@ -35,10 +35,10 @@ docker service create \
     "Description": "A little demonstration of Librum 🚀.",
     "Keywords": "librum,blog,csharp,blogging,netcore,demo",
     "Icon": "fas fa-square",
-    "CanonicalUri": "https://blog.clint.network",
-    "Contact": "support@librum.org",
-    "Twitter": "clint_network",
-    "Github": "clintnetwork",
+    "CanonicalUri": "https://clint.network",
+    "Contact": "contact@librum.org",
+    "Twitter": "librum",
+    "Github": "clintnetwork/librum",
     "Menu": [
         {
             "Title": "About Librum",
@@ -51,12 +51,12 @@ docker service create \
     },
     "UsersStore": [{
         "Role": "Administrator",
-        "Email": "me@clint.network",
-        "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08",
-        "FullName": "Clint.Network",
-        "Twitter": "clint_network",
-        "GitHub": "clintnetwork",
-        "Website": "https://stratis.guru"
+        "Email": "contact@librum.org",
+        "Password": "PASSWORD_IN_SHA1",
+        "FullName": "Librum Blog",
+        "Twitter": "librum",
+        "GitHub": "clintnetwork/librum",
+        "Website": "https://librum.org"
     }],
     "DisqusHostname": "librum.disqus.com"
 }
