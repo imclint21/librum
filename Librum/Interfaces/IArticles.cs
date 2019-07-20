@@ -11,6 +11,7 @@ namespace Librum.Interfaces
         Task DeleteArticleAsync(string slugArticle);
         Task PublishArticleAsync(string slugArticle);
         Task<List<Article>> GetAllAsync();
+        Task<List<Article>> GetSearchResultAsync(string terms);
         Task<Article> GetArticleBySlugAsync(string slug);
         
     }

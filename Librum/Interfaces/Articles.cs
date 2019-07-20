@@ -13,7 +13,7 @@ namespace Librum.Interfaces
 {
     public class Articles : IArticles
     {
-        private DatabaseContext _databaseContext;
+        private readonly DatabaseContext _databaseContext;
 
         public Articles(DatabaseContext databasecontext)
         {
@@ -49,15 +49,13 @@ namespace Librum.Interfaces
             await _databaseContext.SaveChangesAsync();
         }
 
-        public async Task<List<Article>> GetAllAsync()
-        {
-            return await _databaseContext.Articles.ToListAsync();
-        }
+        public async Task<List<Article>> GetAllAsync() => await _databaseContext.Articles.ToListAsync();
 
         public async Task<Article> GetArticleBySlugAsync(string slugArticle)
         {
-            var article = await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug == slugArticle);
-            return article;
+            return await _databaseContext.Articles.FirstOrDefaultAsync(x => x.Slug == slugArticle); ;
         }
+
+        public async Task<List<Article>> GetSearchResultAsync(string terms) => await _databaseContext.Articles.Where(x => x.Title.Contains(terms) || x.Content.Contains(terms)).ToListAsync();
     }
 }
