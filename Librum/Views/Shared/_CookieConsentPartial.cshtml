@@ -6,17 +6,20 @@
 }
 @if (showBanner)
 {
-    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        Use this space to summarize your privacy and cookie use policy. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
-        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-            <span aria-hidden="true">Accept</span>
-        </button>
+    <div id="cookieConsent" class="alert bg-white shadow alert-dismissible position-fixed border-0 rounded-0 w-100 fixed-bottom mb-0 fade show" role="alert">
+        <div class="container">
+            <button type="button" class="accept-policy btn btn-sm btn-outline-primary font-weight-normal float-right" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+                I Accept
+            </button>
+            <div class="pt-1">🍪 Do you likes Cookies ? @(Configuration.GetValue<string>("BlogName")) need your consent to enable some features and improve your user experience.</div>
+        </div>
     </div>
     <script>
         (function () {
-            var button = document.querySelector("#cookieConsent button[data-cookie-string]");
-            button.addEventListener("click", function (event) {
-                document.cookie = button.dataset.cookieString;
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                $("#cookieConsent").slideUp();
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").classList.add("hidden");
             }, false);
         })();
     </script>
