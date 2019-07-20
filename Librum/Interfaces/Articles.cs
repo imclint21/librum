@@ -1,17 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Librum.Models;
-using Librum.Settings;
-using Markdig;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 
 namespace Librum.Interfaces
 {
-    public class Articles : IArticles
+    public class Articles
     {
         private readonly DatabaseContext _databaseContext;
 

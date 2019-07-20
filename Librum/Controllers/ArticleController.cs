@@ -15,9 +15,9 @@ namespace Librum.Controllers
     [Route("article")]
     public class ArticleController : Controller
     {
-        private readonly IArticles _articles;
+        private readonly Articles _articles;
 
-        public ArticleController(IArticles articles)
+        public ArticleController(Articles articles)
         {
             _articles = articles;
         }

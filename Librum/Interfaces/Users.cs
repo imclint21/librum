@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Librum.Interfaces
 {
-    public class Users : IUsers
+    public class Users
     {
         public IConfiguration Configuration { get; }
 

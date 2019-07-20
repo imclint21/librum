@@ -44,8 +44,8 @@ namespace Librum
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<IArticles, Articles>();
-            services.AddTransient<IUsers, Users>();
+            services.AddTransient<Articles>();
+            services.AddTransient<Users>();
 
             services.AddAuthentication(options => 
             {
