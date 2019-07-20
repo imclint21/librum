@@ -94,3 +94,9 @@ main {
   {
   }
 }
+
+.feather {
+    width: 18px !important;
+    height: 18px !important;
+    margin-bottom: 3px;
+}
