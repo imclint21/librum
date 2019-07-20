@@ -8,7 +8,6 @@
     <AssemblyName>Librum</AssemblyName>
   </PropertyGroup>
 
-
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />   
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" /> 
@@ -30,5 +29,9 @@
     <PackageReference Include="GravatarHelper.AspNetCore" Version="1.0.0" />
     <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.1" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="git pull" />
+  </Target>
 
 </Project>
