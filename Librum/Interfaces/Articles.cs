@@ -2,16 +2,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Librum.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Newtonsoft.Json;
 
 namespace Librum.Interfaces
 {
     public class Articles
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly DatabaseContext _databaseContext;
 
-        public Articles(DatabaseContext databasecontext)
+        public Articles(IHttpContextAccessor httpContextAccessor, DatabaseContext databasecontext)
         {
+            _httpContextAccessor = httpContextAccessor;
             _databaseContext = databasecontext;
         }
 
