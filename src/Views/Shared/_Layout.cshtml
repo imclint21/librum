@@ -30,6 +30,7 @@
     <meta name="og:type" content="article">
     <meta name="Identifier-Url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <link rel="canonical" href="@(Context.Request.Scheme + "://" + Context.Request.Host.Value)" />
+    <link rel="image_src" href="@(ViewData["LargeImage"] ?? ("https://" + Context.Request.Host + "/og.png"))">
     <link rel="apple-touch-icon" sizes="192x192" href="@("https://" + Context.Request.Host + "/og.png")">
     <link rel="icon" type="image/png" sizes="192x192" href="@("https://" + Context.Request.Host + "/og.png")">
     <link rel="icon" href="~/favicon.ico" />
