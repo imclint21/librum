@@ -62,4 +62,5 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-Stratis.Guru/wwwroot/css/font-awesome.min.css linguist-vendored
+Librum/wwwroot/css/default.css linguist-vendored
+Librum/wwwroot/css/markdown.css linguist-vendored
