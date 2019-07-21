@@ -30,8 +30,8 @@
     <meta name="og:type" content="website">
     <meta name="Identifier-Url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <link rel="canonical" href="@(Context.Request.Scheme + "://" + Context.Request.Host.Value)" />
-    <link rel="apple-touch-icon" sizes="192x192" href="@(ViewData["LargeImage"] ?? "https://" + Context.Request.Host + "/og.png")">
-    <link rel="icon" type="image/png" sizes="192x192" href="@(ViewData["LargeImage"] ?? "https://" + Context.Request.Host + "/og.png")">
+    <link rel="apple-touch-icon" sizes="192x192" href="@("https://" + Context.Request.Host + "/og.png")">
+    <link rel="icon" type="image/png" sizes="192x192" href="@("https://" + Context.Request.Host + "/og.png")">
     <link rel="icon" href="~/favicon.ico" />
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
