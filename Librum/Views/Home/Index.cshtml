@@ -4,9 +4,15 @@
 }
 @if(Configuration.GetSection("Configuration").GetValue<bool>("DisplayHeader"))
 {
-    <div class="text-center py-5 mt-2">
-        <h1 class="display-5 mt-3">@(Configuration.GetValue<string>("BlogName"))</h1>
-        <p>@(Configuration.GetValue<string>("Description"))</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center py-3 py-lg-5 mt-2">
+                    <h1 class="display-5 mt-3">@(Configuration.GetValue<string>("BlogName"))</h1>
+                    <p>@(Configuration.GetValue<string>("Description"))</p>
+                </div>
+            </div>
+        </div>
     </div>
 }
 else
@@ -26,7 +32,7 @@ else
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card border-0 mb-1">
-                        <div class="card-body">
+                        <div class="card-body p-lg-4 p-2 pb-lg-0 pb-4">
                             @if(User.Identity.IsAuthenticated)
                             {
                                 <div class="float-right">

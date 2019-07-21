@@ -11,10 +11,10 @@
     var isBookmarked = Articles.IsInBookmarks(Model.Id);
     var isLiked = Articles.IsLiked(Model.Id);
 }
-<section class="pt-5 pb-4">
+<section class="pt-lg-5 pt-3 pb-4">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+            <div class="col-lg-8 offset-lg-2">
                 <div id="like-sidebar" class="text-center">
                     <h2 class="mb-3">
                         @if (!isLiked)
@@ -37,7 +37,7 @@
                         }
                     </h6>
                 </div>
-                <div class="markdown">
+                <div class="markdown p-lg-0 p-2">
                     @(Westwind.AspNetCore.Markdown.Markdown.ParseHtmlString(Model.Content))
                 </div>
             </div>

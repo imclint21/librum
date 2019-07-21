@@ -52,7 +52,7 @@
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="@(Configuration.GetValue<string>("Icon"))"></i> @(Configuration.GetValue<string>("BlogName"))</a>
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i data-feather="menu"></i>
                 </button>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav pt-1 ml-3" id="links-menu">
@@ -73,14 +73,14 @@
                                 <input class="form-control form-control-sm mt-1" autofocus name="terms" type="search" placeholder="Search an article...">
                             </form>
                         </li>
-                        <li class="nav-item mr-1">
-                            <a class="nav-link text-dark" href="#" id="open-search"><i class="icon" data-feather="search"></i></a>
+                        <li class="nav-item mr-1 pl-lg-0 pl-3">
+                            <a class="nav-link text-dark" href="#" id="open-search"><i class="icon" data-feather="search"></i><span class="d-lg-none d-inline"> Search</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="SavedArticles"><i class="icon" data-feather="bookmark"></i></a>
+                        <li class="nav-item pl-lg-0 pl-3">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="SavedArticles"><i class="icon" data-feather="bookmark"></i><span class="d-lg-none d-inline"> Saved Articles</span></a>
                         </li>
                     </ul>
-                    <form class="form-inline ml-3">
+                    <form class="form-inline ml-3 ml-lg-3 mt-2 mt-lg-0 mb-2 mb-lg-0">
                         <a class="btn btn-outline-success btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
                         @if (User.Identity.IsAuthenticated)
                         {
