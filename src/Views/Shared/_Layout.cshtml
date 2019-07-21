@@ -10,14 +10,14 @@
     <meta name="Reply-To" content="@(Configuration.GetValue<string>("Contact"))">
     <meta name="Revisit-After" content="1 day">
     <meta name="image" content="@(ViewData["LargeImage"] ?? "https://" + Context.Request.Host + "/og.png")">
-    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@(Configuration.GetValue<string>("Twitter"))">
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
     <meta name="twitter:description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     @if (ViewData["LargeImage"] != null)
     {
         <meta name="twitter:image" content="@(ViewData["LargeImage"])">
-        <meta name="twitter:large_image" content="@(ViewData["LargeImage"])">
+        <meta name="twitter:card" content="summary_large_image" />
     }
     <meta itemprop="name" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
     <meta itemprop="description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
