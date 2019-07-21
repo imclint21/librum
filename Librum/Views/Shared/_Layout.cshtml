@@ -27,22 +27,22 @@
     <link rel="canonical" href="@(Configuration.GetValue<string>("CanonicalUri"))" />
     <link rel="apple-touch-icon" sizes="192x192" href="@(Context.Request.Scheme + "://" + Context.Request.Host + "/og.png")">
     <link rel="icon" type="image/png" sizes="192x192" href="@(Context.Request.Scheme + "://" + Context.Request.Host + "/og.png")">
-	<link rel="icon" href="~/favicon.ico" />
+    <link rel="icon" href="~/favicon.ico" />
     <environment include="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/lib/nprogress/nprogress.css">
-    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="~/lib/node-snackbar/dist/snackbar.css" />
-    <link rel="stylesheet" href="~/css/default.css" />
-    <link rel="stylesheet" href="~/css/markdown.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/nprogress/nprogress.css">
+        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
+        <link rel="stylesheet" type="text/css" href="~/lib/node-snackbar/dist/snackbar.css" />
+        <link rel="stylesheet" href="~/css/default.css" />
+        <link rel="stylesheet" href="~/css/markdown.css" />
     </environment>
     <environment exclude="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/nprogress/nprogress.min.css">
-    <link rel="stylesheet" type="text/css" href="~/lib/node-snackbar/dist/snackbar.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/default.min.css" />
-    <link rel="stylesheet" href="~/css/markdown.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/nprogress/nprogress.min.css">
+        <link rel="stylesheet" type="text/css" href="~/lib/node-snackbar/dist/snackbar.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.min.css" />
+        <link rel="stylesheet" href="~/css/default.min.css" />
+        <link rel="stylesheet" href="~/css/markdown.min.css" />
     </environment>
     @RenderSection("Links", required: false)
 </head>
@@ -56,9 +56,9 @@
                 </button>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav pt-1 ml-3" id="links-menu">
-                        @if(Configuration.GetChildren().Any(x => x.Key == "Menu"))
+                        @if (Configuration.GetChildren().Any(x => x.Key == "Menu"))
                         {
-                            foreach(MenuItem menuItem in Configuration.GetSection("Menu").Get<MenuItem[]>())
+                            foreach (MenuItem menuItem in Configuration.GetSection("Menu").Get<MenuItem[]>())
                             {
                                 <li class="nav-item mr-2">
                                     <a class="nav-link text-dark" href="@menuItem.Link">@menuItem.Title</a>
@@ -66,7 +66,7 @@
                             }
                         }
                     </ul>
-               
+
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item" id="search-input">
                             <form method="get" asp-controller="Home" asp-action="Search">
@@ -82,7 +82,7 @@
                     </ul>
                     <form class="form-inline ml-3">
                         <a class="btn btn-outline-success btn-sm my-sm-0" asp-controller="Article" asp-action="New">New Article</a>
-                        @if(User.Identity.IsAuthenticated)
+                        @if (User.Identity.IsAuthenticated)
                         {
                             <div class="dropdown">
                                 <img gravatar-email="@(User.Identity.Name)" gravatar-default-image="mm" gravatar-size="32" class="ml-3 gravatar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
@@ -114,21 +114,31 @@
     </footer>
     <partial name="_CookieConsentPartial" />
     <environment include="Development">
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/feather-icons/dist/feather.js"></script>
-    <script src="~/lib/node-snackbar/dist/snackbar.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
-    <script src="~/js/default.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/feather-icons/dist/feather.js"></script>
+        <script src="~/lib/node-snackbar/dist/snackbar.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
+        <script src="~/js/default.js"></script>
     </environment>
     <environment exclude="Development">
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/feather-icons/dist/feather.min.js"></script>
-    <script src="~/lib/node-snackbar/dist/snackbar.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/js/default.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/feather-icons/dist/feather.min.js"></script>
+        <script src="~/lib/node-snackbar/dist/snackbar.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/js/default.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
+    @if (!string.IsNullOrEmpty(Configuration.GetValue<string>("GoogleAnalytics")))
+    {
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143790471-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '@(Configuration.GetValue<string>("GoogleAnalytics"))');
+        </script>
+    }
 </body>
 </html>
