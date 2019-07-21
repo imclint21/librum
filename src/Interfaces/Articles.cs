@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Librum.Models;
 using Microsoft.AspNetCore.Http;
@@ -81,5 +82,7 @@ namespace Librum.Interfaces
             }
             return false;
         }
+
+        public string GetLargeImage(string content) => Regex.Match(content, @"src\s*=\s*""(.+?)""", RegexOptions.IgnoreCase).Groups[1].Value;
     }
 }

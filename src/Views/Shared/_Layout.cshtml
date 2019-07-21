@@ -4,24 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]</title>
-    <meta name="Description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
-    <meta name="Keywords" content="@(@ViewData["Keywords"] ?? Configuration.GetValue<string>("Keywords"))">
-    <meta name="Author" content="@(Configuration.GetValue<string>("Author"))">
+    <meta name="Description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta name="Keywords" content="@(ViewData["Keywords"] ?? Configuration.GetValue<string>("Keywords"))">
+    <meta name="Author" content="@(ViewData["Author"] ?? Configuration.GetValue<string>("Author"))">
     <meta name="Reply-To" content="@(Configuration.GetValue<string>("Contact"))">
     <meta name="Revisit-After" content="1 day">
     <meta name="image" content="@("https://" + Context.Request.Host + "/og.png")">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@(Configuration.GetValue<string>("Twitter"))">
     <meta name="twitter:title" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
-    <meta name="twitter:description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta name="twitter:description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     <meta itemprop="name" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
-    <meta itemprop="description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta itemprop="description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     <meta itemprop="image" content="@("https://" + Context.Request.Host + "/og.png")">
     <meta name="og:title" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
-    <meta name="og:description" content="@(@ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    <meta name="og:description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     <meta name="og:image" content="@("https://" + Context.Request.Host + "/og.png")">
     <meta name="og:url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <meta name="og:site_name" content="@(Configuration.GetValue<string>("BlogName"))">
+    <meta name="og:image" content="@(ViewData["LargeImage"])">
     <meta name="og:type" content="website">
     <meta name="Identifier-Url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <link rel="canonical" href="@(Configuration.GetValue<string>("CanonicalUri"))" />

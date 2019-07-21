@@ -3,6 +3,7 @@
     ViewData["Title"] = Model.Title;
     ViewData["Description"] = Model.Description;
     ViewData["Keywords"] = Model.Keywords;
+    ViewData["Author"] = Model.AuthorUsername;
     var commentSettings = new CommentSettings()
     {
         IsInArticle = true
@@ -10,6 +11,8 @@
     var articleOwner = Users.GetUserByEmail(Model.AuthorUsername);
     var isBookmarked = Articles.IsInBookmarks(Model.Id);
     var isLiked = Articles.IsLiked(Model.Id);
+    var articleContent = Westwind.AspNetCore.Markdown.Markdown.ParseHtmlString(Model.Content);
+    ViewData["LargeImage"] = Articles.GetLargeImage(articleContent.Value);
 }
 <section class="pt-lg-5 pt-3 pb-4">
     <div class="container">
@@ -38,7 +41,7 @@
                     </h6>
                 </div>
                 <div class="markdown p-lg-0 p-2">
-                    @(Westwind.AspNetCore.Markdown.Markdown.ParseHtmlString(Model.Content))
+                    @articleContent
                 </div>
             </div>
         </div>
