@@ -7,14 +7,24 @@ $(document).ready(function () {
 
     $(".markdown").find("h2,h3,h4,h5,h6").addClass("clickable-link")
 
-    $(".clickable-link").click(function () {
+    $(".clickable-link").click(function (e) {
         if (history.pushState) {
             history.pushState(null, null, "#" + $(this).attr("id"));
         }
         else {
             location.hash = $(this).attr("id");
         }
-        $('html, body').animate({ scrollTop: $(this).position().top }, "slow");
+        if (e.offsetX < e.target.offsetLeft) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val(window.location.href).select();
+            document.execCommand("copy");
+            $temp.remove();
+            Snackbar.show({ pos: "bottom-center", text: "The Article URL is copied." });
+        }
+        else {
+            $('html, body').animate({ scrollTop: $(this).position().top }, "slow");
+        }
     });
 
     $("#open-search").click(function () {
