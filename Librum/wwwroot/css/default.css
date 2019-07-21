@@ -100,6 +100,12 @@ main {
     }
 }
 
+.text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .icon {
     width: 18px !important;
     height: 18px !important;
