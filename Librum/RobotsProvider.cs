@@ -10,7 +10,7 @@ namespace Librum
             yield return new RobotGroup()
             {
                 UserAgent = "*",
-                Disallow = new[] { "/account" }
+                Disallow = new[] { "/account", "/saved-articles", "/search" }
             };
         }
     }
