@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
 
-namespace Librum.Interfaces
+namespace Librum.Services
 {
     public class Articles
     {

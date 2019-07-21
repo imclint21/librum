@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Librum.Models;
 
-namespace Librum.Interfaces
+namespace Librum.Services
 {
     public class Users
     {

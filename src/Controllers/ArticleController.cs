@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Markdig;
 using Slugify;
-using Librum.Interfaces;
+using Librum.Services;
 using Librum.Models;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;

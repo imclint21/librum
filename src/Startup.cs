@@ -1,5 +1,4 @@
-﻿using Librum.Interfaces;
-using Librum.Settings;
+﻿using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,12 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Westwind.AspNetCore.Markdown;
-using Markdig;
-using Markdig.Extensions.AutoIdentifiers;
-using System;
-using Robotify.AspNetCore;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Westwind.AspNetCore.Markdown;
+using Markdig.Extensions.AutoIdentifiers;
+using Robotify.AspNetCore;
+using Markdig;
+using Librum.Services;
+using Librum.Settings;
 
 namespace Librum
 {
