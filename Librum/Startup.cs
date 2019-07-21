@@ -11,6 +11,7 @@ using Westwind.AspNetCore.Markdown;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
 using System;
+using Robotify.AspNetCore;
 
 namespace Librum
 {
@@ -79,6 +80,10 @@ namespace Librum
                 };
             });
 
+            services.AddRobotify(options => options
+                .AddRobotGroupProvider<RobotsProvider>()
+            );
+
             services.AddMvc();
             services.AddHttpContextAccessor();
 
@@ -103,6 +108,8 @@ namespace Librum
             app.UseSession();
             app.UseCookiePolicy();
             app.UseAuthentication();
+
+            app.UseRobotify();
 
             app.UseMvc(routes =>
             {

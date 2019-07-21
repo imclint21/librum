@@ -23,6 +23,7 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
     <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.1" />
     <PackageReference Include="QRCoder" Version="1.3.3" />
+    <PackageReference Include="Robotify.AspNetCore" Version="1.0.0" />
     <PackageReference Include="Slugify.Core" Version="2.3.0" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
