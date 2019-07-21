@@ -27,7 +27,7 @@
     <meta name="og:image" content="@(ViewData["LargeImage"] ?? "https://" + Context.Request.Host + "/og.png")">
     <meta name="og:url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <meta name="og:site_name" content="@(Configuration.GetValue<string>("BlogName"))">
-    <meta name="og:type" content="website">
+    <meta name="og:type" content="article">
     <meta name="Identifier-Url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <link rel="canonical" href="@(Context.Request.Scheme + "://" + Context.Request.Host.Value)" />
     <link rel="apple-touch-icon" sizes="192x192" href="@("https://" + Context.Request.Host + "/og.png")">
