@@ -1,9 +1,9 @@
-# Librum
+# 🖋 Librum Micro-Blog Engine
 
 Librum is an opensource, lightweight and ready to use blog engine written in C#
 
-![](https://travis-ci.org/clintnetwork/librum.svg?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Travis](https://travis-ci.org/clintnetwork/librum.svg?branch=master)](https://travis-ci.org/clintnetwork/librum)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/clintnetwork/librum/blob/master/LICENSE.md)
 
 ![image](https://user-images.githubusercontent.com/5221349/55356726-b4355880-54cb-11e9-9bcc-7b1d60c2ff5e.png)
 
