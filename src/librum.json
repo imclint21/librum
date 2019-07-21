@@ -1,0 +1,42 @@
+{
+  "ConnectionString": "Server=localhost;Database=Librum;Username=Librum;Password=rafale",
+  "BlogName": "Clint.Network's Blog",
+  "Description": "WebApp Builder, Cryptos Enthousiast, C# / .Net Core Developer 🚀",
+  "Keywords": "librum,blog,csharp,blogging,netcore,demo",
+  "Icon": "fas fa-code",
+  "CanonicalUri": "https://clint.network",
+  "Author": "Clint.Network",
+  "Contact": "me@clint.network",
+  "Twitter": "clint_network",
+  "Github": "clintnetwork",
+  "Menu": [
+    {
+      "Title": "My Twitter",
+      "Link": "https://twitter.com/clint_network"
+    },
+    {
+      "Title": "My LinkedIn",
+      "Link": "https://www.linkedin.com/in/clintnetwork/"
+    },
+    {
+      "Title": "Stratis.Guru",
+      "Link": "https://stratis.guru/"
+    }
+  ],
+  "Configuration": {
+    "FixedNavbar": true,
+    "DisplayHeader": true
+  },
+  "UsersStore": [
+    {
+      "Role": "Administrator",
+      "Email": "me@clint.network",
+      "Password": "ea605b0e8114409e5aaff2dc3769a19160bc3d08",
+      "FullName": "Librum Blog",
+      "Twitter": "librum",
+      "GitHub": "clintnetwork/librum",
+      "Website": "https://librum.org"
+    }
+  ],
+  "DisqusHostname": "clicksguard-io.disqus.com"
+}
