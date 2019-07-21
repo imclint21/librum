@@ -14,6 +14,11 @@
     <meta name="twitter:site" content="@(Configuration.GetValue<string>("Twitter"))">
     <meta name="twitter:title" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
     <meta name="twitter:description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
+    @if (ViewData["LargeImage"] != null)
+    {
+        <meta name="twitter:image" content="@(ViewData["LargeImage"])">
+        <meta name="twitter:large_image" content="@(ViewData["LargeImage"])">
+    }
     <meta itemprop="name" content="@(Configuration.GetValue<string>("BlogName")) | @ViewData["Title"]">
     <meta itemprop="description" content="@(ViewData["Description"] ?? Configuration.GetValue<string>("Description"))">
     <meta itemprop="image" content="@("https://" + Context.Request.Host + "/og.png")">
@@ -22,7 +27,6 @@
     <meta name="og:image" content="@("https://" + Context.Request.Host + "/og.png")">
     <meta name="og:url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <meta name="og:site_name" content="@(Configuration.GetValue<string>("BlogName"))">
-    <meta name="og:image" content="@(ViewData["LargeImage"])">
     <meta name="og:type" content="website">
     <meta name="Identifier-Url" content="@(Configuration.GetValue<string>("CanonicalUri"))">
     <link rel="canonical" href="@(Configuration.GetValue<string>("CanonicalUri"))" />
