@@ -52,9 +52,15 @@
                             }
                         }
                     </ul>
+               
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" id="search-input">
+                            <form method="get" asp-controller="Home" asp-action="Search">
+                                <input class="form-control form-control-sm mt-1" autofocus name="terms" type="search" placeholder="Search an article...">
+                            </form>
+                        </li>
                         <li class="nav-item mr-1">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Search"><i class="icon" data-feather="search"></i></a>
+                            <a class="nav-link text-dark" href="#" id="open-search"><i class="icon" data-feather="search"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="SavedArticles"><i class="icon" data-feather="bookmark"></i></a>

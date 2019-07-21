@@ -106,6 +106,10 @@ main {
         height: 30px !important;
     }
 
+#search-input {
+    display: none;
+}
+
 #like-sidebar {
     position: fixed;
     margin: 200px 0 0 -150px;

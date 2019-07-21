@@ -3,6 +3,10 @@
     <h1 class="display-5 mt-3">Search for '@ViewBag.Terms'</h1>
     <p>This is the result for your search.</p>
 </div>
+@if (Model.Count == 0)
+{
+    <p class="text-center">There are no results for your search.</p>
+}
 <section id="articles" class="pb-4">
     <div class="container">
         @foreach (var article in Model)

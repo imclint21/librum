@@ -16,6 +16,11 @@ $(document).ready(function () {
         }
         $('html, body').animate({ scrollTop: $(this).position().top }, "slow");
     });
+
+    $("#open-search").click(function () {
+        $(this).hide();
+        $("#search-input").show().focus();
+    })
 })
 
 $(window).scroll(function (event) {
