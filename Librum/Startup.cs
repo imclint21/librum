@@ -12,6 +12,7 @@ using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
 using System;
 using Robotify.AspNetCore;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Librum
 {
@@ -40,6 +41,7 @@ namespace Librum
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddTransient<Articles>();
             services.AddTransient<Users>();
 
