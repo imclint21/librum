@@ -61,3 +61,11 @@ docker service create \
     "DisqusHostname": "librum.disqus.com"
 }
 ```
+
+## Contribute
+
+Feel free to contribute by opening a Pull Request and Forking or simply make a donation using addresses:
+
+Stratis: ShUDjFTvQfuFEgmkYzdQiPPAdjRCe91kaq
+
+Bitcoin: 3NhdjiGrpzH5geVrDHa173EuXxnAVhghtZ
