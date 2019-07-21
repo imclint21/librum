@@ -100,10 +100,10 @@ namespace Librum
             else
             {
                 app.UseStatusCodePagesWithRedirects("/error?errorCode={0}");
-                // app.UseHsts();
+                app.UseHsts();
             }
 
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
             app.UseCookiePolicy();
