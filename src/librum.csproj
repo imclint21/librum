@@ -26,7 +26,7 @@
     <PackageReference Include="Robotify.AspNetCore" Version="1.0.0" />
     <PackageReference Include="Slugify.Core" Version="2.3.0" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.2.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="GravatarHelper.AspNetCore" Version="1.0.0" />
     <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.1" />
     <PackageReference Include="xsitemap" Version="2.0.6" />
